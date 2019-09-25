@@ -1,17 +1,12 @@
 <template>
   <div id="app">
-    <ipfs-info />
+    <router-view />
   </div>
 </template>
 
 <script>
-import IpfsInfo from "./components/IpfsInfo.vue";
-
 export default {
-  name: "app",
-  components: {
-    IpfsInfo
-  }
+  name: "App"
 };
 </script>
 
