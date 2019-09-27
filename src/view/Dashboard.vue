@@ -19,7 +19,7 @@
       </div>
       <!-- 推荐 -->
       <section ref="navDetail">
-        <div class="container b-section" v-for="item in clists" :key="item.id">
+        <div class="container b-section" v-for="item in clists" :id="item.id">
           <p>{{ item.name }}</p>
         </div>
       </section>

@@ -89,7 +89,7 @@
       <div class="user-box">
         <ul>
           <li>
-            <a href="https://passport.bilibili.com/login" target="_blank" title="登录">登录</a>
+            <router-link :to="{path: '/passport'}" title="登录">登录</router-link>
           </li>
           <i class="s-line"></i>
           <li>
