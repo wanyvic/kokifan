@@ -1,15 +1,11 @@
-import Vue from 'vue';
-import IpfsInfo from "../components/IpfsInfo.vue";
-import Router from 'vue-router';
-
-Vue.use(Router);
-
+import Vue from 'vue'
+import Index from '../views'
+import Router from 'vue-router'
+Vue.use(Router)
 export default new Router({
+    mode: 'hash',
+    linkActiveClass: 'active',
     routes: [
-        {
-            path: '/',
-            name: 'IpfsInfo',
-            component: IpfsInfo
-        }
+        { path: '*', component: Index },
     ]
-});
+})

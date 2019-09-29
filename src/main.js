@@ -1,18 +1,15 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue';
-import App from './App.vue';
-// import router from './router';
-// import VueIpfs from './plugins/vue-ipfs';
-Vue.config.productionTip = false;
+import Vue from 'vue'
+import App from './App'
+import VueLazyload from 'vue-lazyload'
+import router from './router'
+Vue.use(VueLazyload)
 
-// Load our IPFS plugin.
-// Vue.use(VueIpfs);
+import store from './store'
 /* eslint-disable no-new */
-
-Vue.config.productionTip = false;
 new Vue({
+  store,
+  router,
   render: h => h(App),
-  // router,
-  components: { App },
-}).$mount('#app');
+}).$mount('#app')

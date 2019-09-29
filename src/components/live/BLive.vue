@@ -96,7 +96,7 @@ export default {
 						display inline-block
 						font-size 18px
 						line-height 24px
-						color #222
+						color #222 
 						a
 							color #222
 						h2
@@ -160,7 +160,7 @@ export default {
 						visibility hidden
 						height 0
 						clear both
-						font-size 0
+						font-size 0						
 					.icon-refresh
 						background  url(../../assets/images/icons.png) -475px -89px no-repeat
 						display inline-block

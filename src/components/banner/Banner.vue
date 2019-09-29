@@ -2,7 +2,7 @@
 	<div class="banner" @mouseover="show=true" @mouseout="show=false">
 		<div class="topic-preview-wrapper">
 			<div class="topic-preview-list-wrapper">
-				<ul class="topic-preview" style="width: 500%;" ref="banner">
+				<ul class="topic-preview" style="width: 500%;" ref="banner"> 
 					<BannerItem v-for="item in bannerlist" :banner="item"></BannerItem>
 				</ul>
 			</div>
@@ -47,7 +47,7 @@ export default {
 		this.$store.dispatch('bannerlist')
 	},
 	methods: {
-		cutItem(index) {
+		cutItem(index) { 
 			this.count = index
 			let distance = -100 * this.count
 			let left = distance + "%"
@@ -60,7 +60,7 @@ export default {
 		startInterval() {
 			//轮播图定时滚动
 			this.interval = setInterval(() => {
-				this.count ++
+				this.count ++ 
 				if (this.count === 5) {
 					this.count = 0
 				}

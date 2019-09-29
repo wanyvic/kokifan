@@ -89,7 +89,7 @@ export default {
 			return this.options.offset || 100
 		},
 		// 拖拽的元素的position会变为absolute,dragStyles用来设置其位置,鼠标运动时会调用,从而实现跟随鼠标运动
-		dragStyles() {
+		dragStyles() { 
 			return {
 				left: `${this.x}px`,
 				top: `${this.y}px`
@@ -123,7 +123,7 @@ export default {
 		},
 		/** 绑定事件 */
 		bindEvent() {
-			document.addEventListener('scroll', this.scroll, false)
+			document.addEventListener('scroll', this.scroll, false) 
 			document.addEventListener('mousemove', this.dragMove, false)
 			document.addEventListener('mouseup', this.dragEnd, false)
 			document.addEventListener('mouseleave', this.dragEnd, false)
@@ -144,7 +144,7 @@ export default {
 					offsetTop: offsetTop,
 					height: element.offsetHeight
 				}
-			})
+			}) 
 		},
 		setEnable(index) {
 			if (index === this.current) {

@@ -144,7 +144,7 @@ export default {
 					border-radius 4px
 					&:hover
 						border solid 1px #ccd0d7
-						border-radius 4px 4px 0 0
+						border-radius 4px 4px 0 0 
 						box-shadow rgba(0,0,0,0.16) 0 2px 4px
 					.txt
 						display inline-block

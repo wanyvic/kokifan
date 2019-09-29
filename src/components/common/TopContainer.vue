@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import PostMaterial from './PostMaterial'
+import PostMaterial from './PostMaterial.vue'
 export default {
   data() {
     return {

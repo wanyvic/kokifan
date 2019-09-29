@@ -13,7 +13,7 @@
 								<img data-img="" :src="item.pic" loaded="loaded"  style="opacity: 1;">
 								</a>
 						</div>
-						<a class="rl-info" href="/video/av9211860/" :title="item.title + item.pts" target="_blank">
+						<a class="rl-info" href="/video/av9211860/" :title="item.title + item.pts" target="_blank">	
 							<div class="title t">{{item.title}}
 							</div>
 							<div class="i">
@@ -34,7 +34,7 @@
 								<img data-img="" :src="item.pic" loaded="loaded"  style="opacity: 1;">
 								</a>
 						</div>
-						<a class="rl-info" href="/video/av9211860/" :title="item.title + item.pts" target="_blank">
+						<a class="rl-info" href="/video/av9211860/" :title="item.title + item.pts" target="_blank">	
 							<div class="title t">{{item.title}}
 							</div>
 							<div class="i">
@@ -53,7 +53,7 @@
 </template>
 
 <script>
-// import { contentrankApi } from 'api'
+import { contentrankApi } from '../../api'
 export default {
 	data(){
 		return {
@@ -90,33 +90,33 @@ export default {
 	},
 	mounted() {
 		this.getrankData()
-	},
+	},				
 	methods: {
 		getrankData() {
 			//防止重复请求
 			if (this.isWeek && JSON.stringify(this.weekData) !== '{}') {
 				this.rank = this.weekData
 				return
-			}
+			} 
 			if (!this.isWeek && JSON.stringify(this.threeDayData) !== '{}') {
 				this.rank = this.threeDayData
 				return
-			}
+			} 
 
 			let param = {
 				categoryId: this.categoryId
 			}
-			// if (this.isWeek) {
-			// 	contentrankApi.contentrankweek(param).then((response) => {
-			// 		this.weekData = response
-			// 		this.rank = this.weekData
-			// 	})
-			// } else {
-			// 	contentrankApi.contentrank(param).then((response) => {
-			// 		this.threeDayData = response
-			// 		this.rank = this.threeDayData
-			// 	})
-			// }
+			if (this.isWeek) {
+				contentrankApi.contentrankweek(param).then((response) => {
+					this.weekData = response
+					this.rank = this.weekData
+				})
+			} else {
+				contentrankApi.contentrank(param).then((response) => {
+					this.threeDayData = response
+					this.rank = this.threeDayData
+				})
+			}
 		}
 	}
 }

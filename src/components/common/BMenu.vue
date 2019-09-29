@@ -2,10 +2,10 @@
 	<div class="menu">
 		<div class="menu-wrapper">
 			<ul class="nav-menu">
-				<BMenuItem  v-for="i in classify" :key="i"></BMenuItem>
+				<BMenuItem  v-for="i in classify" :item="i"></BMenuItem>
 			</ul>
 			<div class="menu-r">
-				<a target="_blank" href="http://search.bilibili.com/all?keyword=%E8%B9%A6%E8%BF%AA" title="蹦迪" class="random-p">
+				<a href="" target="_blank" href="http://search.bilibili.com/all?keyword=%E8%B9%A6%E8%BF%AA" title="蹦迪" class="random-p">
 					<div class="random-p-movie">
 						<img src="//i2.hdslb.com/bfs/active/84f323e3a77a6eafee656f832847603751f3857d.gif" alt="蹦迪">
 					</div>
@@ -15,7 +15,7 @@
 						<div class="mobile-p-box" v-show="showMobileLink">
 							<div class="mobile-p-qrcode">
 							</div>
-						</div>
+						</div>					
 					</transition>
 
 				</a>
@@ -83,7 +83,7 @@ export default {
 				{
 					title: '影视',
 					num: 702
-				},
+				}, 
 				{
 					title: '广场',
 					num: 0,

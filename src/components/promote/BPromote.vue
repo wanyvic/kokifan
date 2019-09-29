@@ -106,7 +106,7 @@ export default {
 						font-weight normal
 				.pmt-list
 					display inline-block
-					vertical-align bottom
+					vertical-align bottom 
 					margin-left 10px
 					margin-top 10px
 					.pmt-link
@@ -132,7 +132,7 @@ export default {
 						clear both
 						font-size 0
 		.b-r
-			float right
+			float right 
 			width 260px
 			margin-bottom 50px
 			height 195px

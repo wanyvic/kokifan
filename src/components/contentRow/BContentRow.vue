@@ -55,7 +55,7 @@ export default {
 			width 700px
 			margin-bottom 50px
 		.b-r
-			float right
+			float right 
 			width 260px
 			min-height 360px
 			height 360px

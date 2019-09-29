@@ -82,14 +82,14 @@ export default {
 				let size = 100 * this.preview.length
 				let width = size + "%"
 				this.$refs.miniPreview.style.width = width
-				this.startInterval()
+				this.startInterval()			
 			}
 		}
 	},
-	mounted() {
+	mounted() { 
 	},
 	methods: {
-		cutItem(index) {
+		cutItem(index) { 
 			this.count = index
 			let distance = -100 * this.count
 			let left = distance + "%"
@@ -100,7 +100,7 @@ export default {
 		startInterval() {
 			//轮播图定时滚动
 			this.interval = setInterval(() => {
-				this.count ++
+				this.count ++ 
 				if (this.count === this.preview.length) {
 					this.count = 0
 				}
@@ -223,7 +223,7 @@ export default {
 								width 20px
 								height 20px
 								background url(../../assets/images/state.png) no-repeat center -598px
-								margin-right 5px
+								margin-right 5px	
 						.mini-preview-wrapper
 							position relative
 							width 260px
@@ -290,7 +290,7 @@ export default {
 											background-color #fff
 											border-radius 5px
 											transition .2s
-										&.on
+										&.on 
 											a
 												width 30px
 												background-color #f25d8e
