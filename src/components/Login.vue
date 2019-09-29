@@ -28,8 +28,33 @@ export default {
           console.log("login", node);
           node.id().then(idinfo => {
             console.log(idinfo);
-            if (idinfo.id != undefined){
-                this.$router.push({path:'/'})
+            if (idinfo.id != undefined) {
+            //   this.$store
+            //     .dispatch({
+            //       type: "upload",
+            //       str: "wanyvic"
+            //     })
+            //     .then(resolve => {
+            //       console.log(resolve);
+            //       this.$store
+            //         .dispatch({
+            //           type: "cat",
+            //           ipfsPath: "QmRFfCgDZW21D9cEXpu4EVttVKbhMzj2m6JwHrXkCcksnr"
+            //         })
+            //         .then(resolve => {
+            //           console.log(resolve);
+            //           this.$store
+            //             .dispatch({
+            //               type: "publish",
+            //               addr:
+            //                 "/ipfs/QmRFfCgDZW21D9cEXpu4EVttVKbhMzj2m6JwHrXkCcksnr"
+            //             })
+            //             .then(resolve => {
+            //               console.log(resolve);
+            //             });
+            //         });
+            //     });
+              this.$router.push({path:'/'})
             }
           });
         });

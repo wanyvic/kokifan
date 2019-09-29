@@ -10,8 +10,10 @@
   "dependencies": {
     "axios": "^0.15.3",
     "core-js": "^2.6.5",
+    "element-ui": "^2.12.0",
     "ipfs": "^0.38.0-pre.1",
     "lodash": "^4.17.4",
+    "peer-id": "^0.13.3",
     "sass-loader": "^8.0.0",
     "vue": "^2.6.10",
     "vue-lazyload": "^1.0.1",

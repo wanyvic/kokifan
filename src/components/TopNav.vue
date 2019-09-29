@@ -96,7 +96,7 @@
             <a href="https://passport.bilibili.com/register/phone"  target="_blank" title="注册">注册</a>
           </li>
           <li class="none">
-            <router-link :to="{path: '/'}" title="投稿" class="i-link">投 稿</router-link>
+            <router-link :to="{path: '/contribute'}" title="投稿" class="i-link">投 稿</router-link>
             <ul class="s-menu">
               <li>
                 <a href="http://member.bilibili.com/v/video/submit.html" target="_blank">

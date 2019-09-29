@@ -3,22 +3,22 @@
     <div class="body-bg" v-show="drap" @click="drap = !drap"></div>
     <div class="b-page-header">
       <topNav :bg="navs.pic" :light="navs.style"></topNav>
-      <bgNav :logo="navs.litpic" :bg="navs.pic" :title="navs.name" :url="navs.url"></bgNav>
+      <!-- <bgNav :logo="navs.litpic" :bg="navs.pic" :title="navs.name" :url="navs.url"></bgNav> -->
     </div>
     <!-- 导航栏 -->
-    <SliderNav :lists="clists" :left="slideLeft" :offsetTop="offsetTop" :drap="drap" v-on:updateDrap="updateDrap"></SliderNav>
-    <div class="b-page-body">
+    <!-- <SliderNav :lists="clists" :left="slideLeft" :offsetTop="offsetTop" :drap="drap" v-on:updateDrap="updateDrap"></SliderNav>
+    <div class="b-page-body"> -->
       <!-- 顶部 -->
-      <div class="container" id="index-top" ref="container">
+      <!-- <div class="container" id="index-top" ref="container">
         <div class="b-l">
           <Mcarousel :carousels="carousels"></Mcarousel>
         </div>
         <div class="b-r">
           <Lcarousel></Lcarousel>
         </div>
-      </div>
+      </div> -->
       <!-- 推荐 -->
-      <section ref="navDetail">
+      <!-- <section ref="navDetail">
         <div class="container b-section" v-for="item in clists" :id="item.id">
           <p>{{ item.name }}</p>
         </div>
@@ -27,8 +27,8 @@
         <a href="https://github.com/xyxiao001" target="_blank">footer</a>
         <a href="https://github.com/xyxiao001" target="_blank">goodboy</a>
         <p>看看超过会怎样</p>
-      </div>
-    </div>
+      </div> -->
+    <!-- </div> -->
   </div>
 </template>
 
