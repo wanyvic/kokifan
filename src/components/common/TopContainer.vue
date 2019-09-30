@@ -36,13 +36,9 @@
         <div class="uns_box">
           <ul class="menu">
             <li id="i_menu_login_reg" guest="yes" class="u-i" style="display: list-item">
-              <a id="i_menu_login_btn" class="i-link login" href="https://account.bilibili.com/login">
-                <span>登录</span>
-              </a>
+              <router-link id="i_menu_login_btn" class="i-link login" :to="{path: '/login'}" title="登录">登录</router-link>
               <i class="s-line"></i>
-              <a id="i_menu_register_btn" class="i-link reg" href="https://www.bilibili.com/register">
-                <span>注册</span>
-              </a>
+              <router-link id="i_menu_register_btn" class="i-link reg" :to="{path: '/register'}" title="注册">注册</router-link>
             </li>
             <li class="u-i b-post">
               <a class="i-link" href="http://member.bilibili.com/v/video/submit.html" target="_blank" @mouseenter="isShowPostMenu = !isShowPostMenu" @mouseleave="isShowPostMenu = !isShowPostMenu">投稿</a>

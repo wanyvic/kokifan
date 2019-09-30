@@ -9,6 +9,7 @@ import rankStore from './modules/rankStore'
 import promoteStore from './modules/promoteStore'
 import liveStore from './modules/liveStore'
 import contentStore from './modules/contentStore'
+import ipfsStore from './modules/ipfsStore'
 
 const state = {
 	requesting: false,
@@ -28,6 +29,7 @@ export default new Vuex.Store({
 		rankStore,
 		promoteStore,
 		liveStore,
-		contentStore
+		contentStore,
+		ipfsStore,
 	}
 })
