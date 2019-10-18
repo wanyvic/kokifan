@@ -1,9 +1,9 @@
 <template>
   <div id="dashboard">
-    <TopContainer></TopContainer>
-    <BHeader></BHeader>
+    <!-- <TopContainer></TopContainer>
+    <BHeader></BHeader>-->
     <BContent :rows="rows"></BContent>
-    <BNavSide :options="options" v-on:change="isShowMask"></BNavSide>
+    <!-- <BNavSide :options="options" v-on:change="isShowMask"></BNavSide> -->
     <div class="wnd-mask" ref="mask" v-show="showMask"></div>
   </div>
 </template>
@@ -23,7 +23,13 @@ export default {
     BNavSide
   },
   mounted() {
-    this.$store.dispatch("getContentRows");
+    let dataObj
+    this.$store.dispatch({
+          type: "createIpfs",
+          data: dataObj
+        }).then(() => {
+      this.$store.dispatch("getContentRows");
+    });
   },
   data() {
     return {

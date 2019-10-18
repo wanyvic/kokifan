@@ -17,14 +17,14 @@ export default {
     login() {
       this.$store
         .dispatch({
-          type: "createWithPrivKey",
+          type: "createIpfs",
           PrivKey: this.PrivKey
         })
         .then(
           node => {
             node.id().then(
               identity => {
-                this.$router.push({ path: "/" });
+                this.$router.push({ path: "/upload" });
               },
               err => console.error(err)
             );

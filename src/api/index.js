@@ -39,9 +39,11 @@ export const liveApi = {
 
 // 具体内容
 export const contentApi = {
-	content() {
-		return axios.get(url.contet).then((response) => {
-			return response.data
+	content(ipfsStore, cid) {
+		return new Promise((resolve, reject) => {
+			ipfsStore.node.get(cid).then(data => {
+				resolve(data)
+			}, err => reject(err))
 		})
 	}
 }

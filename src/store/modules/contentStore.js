@@ -37,10 +37,10 @@ const getters = {
 }
 
 const actions = {
-	getContentRows({commit, state, rootState}) {
+	getContentRows({ commit, state, rootState }) {
 		rootState.requesting = true
 		commit(TYPE.CONTENT_REQUEST)
-		contentApi.content().then((response) => {
+		contentApi.content(rootState.ipfsStore, rootState.ipfsStore.webID).then((response) => {
 			rootState.requesting = false
 			commit(TYPE.CONTENT_SUCCESS, response)
 		}, (error) => {
@@ -48,7 +48,7 @@ const actions = {
 			commit(TYPE.CONTENT_FAILURE)
 		})
 	},
-	getContentRank({commit, state, rootState}, categoryId) {
+	getContentRank({ commit, state, rootState }, categoryId) {
 		console.log(categoryId)
 		rootState.requesting = true
 		commit(TYPE.CONTENT_RANK_REQUEST)
@@ -82,21 +82,23 @@ const actions = {
 // 12 movie 电影
 // 13 teleplay TV剧
 const mutations = {
-	[TYPE.CONTENT_REQUEST] (state) {
+	[TYPE.CONTENT_REQUEST](state) {
 
 	},
-	[TYPE.CONTENT_SUCCESS] (state, response) {
-		for (let i = 0; i < state.sortKeys.length; i++) {
-			let category = state.sortKeys[i] 
-			let rowItem = {
-				category: category,
-				categoryId: state.sortIds[i],
-				name: state.sortValues[i],
-				b_id: `b_${category}`,
-				item: Object.values(response[category])
-			}
-			state.rows.push(rowItem)
+	[TYPE.CONTENT_SUCCESS](state, response) {
+		let res = JSON.parse(response[0].content.toString('utf8'))
+		// for (let i = 0; i < state.sortKeys.length; i++) {
+		let category = state.sortKeys[1]
+		let rowItem = {
+			category: category,
+			categoryId: state.sortIds[1],
+			name: state.sortValues[1],
+			b_id: `b_${category}`,
+			item: Object.values(res[category])
 		}
+		state.rows.push(rowItem)
+		// }
+		console.log(state.rows)
 		// for(let key of state.sortKeys) {
 		// 	// console.log(JSON.stringify(Object.values(response[key])))
 		// 	let rowItem = {
@@ -108,19 +110,19 @@ const mutations = {
 		// 	state.rows.push(Object.values(response[key]))
 		// }
 	},
-	[TYPE.CONTENT_FAILURE] (state) {
+	[TYPE.CONTENT_FAILURE](state) {
 
 	},
 
 	// 排行榜信息
-	[TYPE.CONTENT_RANK_REQUEST] (state) {
+	[TYPE.CONTENT_RANK_REQUEST](state) {
 
 	},
-	[TYPE.CONTENT_RANK_SUCCESS] (state, response) {
+	[TYPE.CONTENT_RANK_SUCCESS](state, response) {
 		state.ranks.push(response)
 		state.rank = response
 	},
-	[TYPE.CONTENT_RANK_FAILURE] (state) {
+	[TYPE.CONTENT_RANK_FAILURE](state) {
 
 	}
 }

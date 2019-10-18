@@ -41,7 +41,7 @@
               <router-link id="i_menu_register_btn" class="i-link reg" :to="{path: '/register'}" title="注册">注册</router-link>
             </li>
             <li class="u-i b-post">
-              <a class="i-link" href="http://member.bilibili.com/v/video/submit.html" target="_blank" @mouseenter="isShowPostMenu = !isShowPostMenu" @mouseleave="isShowPostMenu = !isShowPostMenu">投稿</a>
+              <router-link class="i-link" target="_blank" @mouseenter="isShowPostMenu = !isShowPostMenu" @mouseleave="isShowPostMenu = !isShowPostMenu" :to="{path: '/upload'}" title="投稿">投稿</router-link>
               <PostMaterial v-show="isShowPostMenu"></PostMaterial>
             </li>
           </ul>
