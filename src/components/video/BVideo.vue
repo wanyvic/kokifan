@@ -22,7 +22,7 @@ export default {
           this.$store.dispatch({
             type: "CreateSwarmClient",
             config: {
-              bzzUrl: "http://localhost:8500",
+              bzzUrl: "https://swarm-gateways.net",
               debug: true
             }
           });
