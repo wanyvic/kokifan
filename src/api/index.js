@@ -1,6 +1,8 @@
 import * as url from './urlConfig'
 import axios from 'axios'
+import {swarmdata} from './swarm'
 
+// 与智能合约交互 获取json
 //获取轮播图
 export const bannerApi = {
 	list() {
@@ -39,13 +41,14 @@ export const liveApi = {
 
 // 具体内容
 export const contentApi = {
-	content(ipfsStore, cid) {
+	
+	content(web3) {
 		return new Promise((resolve, reject) => {
-			ipfsStore.node.get(cid).then(data => {
+			//执行智能合约获取json数据
+			let data = swarmdata
 				resolve(data)
 			}, err => reject(err))
-		})
-	}
+		}
 }
 
 // 具体内容的三日排行榜信息

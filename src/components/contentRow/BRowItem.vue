@@ -2,14 +2,14 @@
   <li class="item-li">
     <div class="v m300">
       <!-- 上部分 -->
-      <a class="preview cover-preview" :href="hreflink" target="_blank">
+	  <router-link class="preview cover-preview" :to="{name:'video',params:{vid:item.aid}}">
         <!-- item 左上角的奖牌 -->
         <div class="medal" v-show="false"></div>
         <div class="original"></div>
         <!-- 边框 -->
         <div class="border"></div>
         <!-- 背景图片 -->
-        <img :src="pic" />
+        <img :src="item.pic" />
         <!-- 内容预览 -->
         <div class="back">
           <div></div>
@@ -25,9 +25,9 @@
         <div class="x">
           <b class="x2">{{item.duration}}</b>
         </div>
-      </a>
+		</router-link>
       <!-- 下部分 -->
-      <a :href="hreflink" :title="item.title" target="_blank">
+	  <router-link :title="item.title" target="_blank" :to="{name:'video',params:{vid:item.aid}}">
         <div class="t">{{item.title}}</div>
         <div class="i">
           <span>
@@ -39,7 +39,7 @@
             {{item.video_review}}
           </span>
         </div>
-      </a>
+		</router-link>
     </div>
   </li>
 </template>
@@ -53,22 +53,9 @@ export default {
   },
   data() {
     return {
-      pic: new Blob()
     };
   },
   mounted() {
-    this.$store
-      .dispatch({
-        type: "getIpfsFile",
-        Cid: this.$props.item.pic
-      })
-      .then(
-        res => {
-          let blob = new Blob([res[0].content], { type: "text/plain" });
-          this.pic = URL.createObjectURL(blob);
-        },
-        err => console.log(err)
-      );
   },
   computed: {
     hreflink() {

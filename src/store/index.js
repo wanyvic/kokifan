@@ -10,6 +10,7 @@ import promoteStore from './modules/promoteStore'
 import liveStore from './modules/liveStore'
 import contentStore from './modules/contentStore'
 import ipfsStore from './modules/ipfsStore'
+import swarmStore from './modules/swarmStore'
 
 const state = {
 	requesting: false,
@@ -31,5 +32,6 @@ export default new Vuex.Store({
 		liveStore,
 		contentStore,
 		ipfsStore,
+		swarmStore
 	}
 })

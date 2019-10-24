@@ -1,4 +1,5 @@
 import { contentApi, contentrankApi } from '../../api'
+import { getSwarmInstance } from '../../api/swarm'
 import * as TYPE from '../actionType/contentType'
 
 
@@ -37,15 +38,50 @@ const getters = {
 }
 
 const actions = {
+	getRowsItem({ commit, state }, data) {
+		for (let p in state.rows) {
+			for (let i in state.rows[p].item) {
+				if (state.rows[p].item[i].aid == data.aid) {
+					console.log('return', state.rows[p].item[i])
+					return state.rows[p].item[i]
+				}
+			}
+		}
+	},
+	hlsPlay({ commit, state }, data) {
+		console.log(data)
+		let swarm = getSwarmInstance()
+		if (typeof swarm === 'undefined') {
+			console.log("swarm undefined")
+		}
+		const url = data.value.redirect_url
+		const rootPos = url.indexOf('/')
+		const rootHash = url.substring(0, rootPos)
+		const filePath = url.substring(rootPos + 1, url.length)
+		swarm.hlsVideo(rootHash, filePath, data.element)
+	},
 	getContentRows({ commit, state, rootState }) {
-		rootState.requesting = true
-		commit(TYPE.CONTENT_REQUEST)
-		contentApi.content(rootState.ipfsStore, rootState.ipfsStore.webID).then((response) => {
-			rootState.requesting = false
-			commit(TYPE.CONTENT_SUCCESS, response)
-		}, (error) => {
-			rootState.requesting = false
-			commit(TYPE.CONTENT_FAILURE)
+		return new Promise((resolve, reject) => {
+			console.log("getContentRows", swarm)
+			let swarm = getSwarmInstance()
+			if (typeof swarm === 'undefined') {
+				console.log("swarm undefined")
+			}
+			rootState.requesting = true
+			commit(TYPE.CONTENT_REQUEST)
+			contentApi.content(rootState.web3).then((res) => {
+				console.log(res)
+				swarm.parseJson(res).then(response => {
+					console.log('getContentRows', response)
+					//swarm 解析
+					rootState.requesting = false
+					commit(TYPE.CONTENT_SUCCESS, response)
+					resolve(state.rows)
+				}, (error) => {
+					rootState.requesting = false
+					commit(TYPE.CONTENT_FAILURE)
+				})
+			})
 		})
 	},
 	getContentRank({ commit, state, rootState }, categoryId) {
@@ -86,7 +122,7 @@ const mutations = {
 
 	},
 	[TYPE.CONTENT_SUCCESS](state, response) {
-		let res = JSON.parse(response[0].content.toString('utf8'))
+		// let res = JSON.parse(response[0].toString('utf8'))
 		// for (let i = 0; i < state.sortKeys.length; i++) {
 		let category = state.sortKeys[1]
 		let rowItem = {
@@ -94,7 +130,7 @@ const mutations = {
 			categoryId: state.sortIds[1],
 			name: state.sortValues[1],
 			b_id: `b_${category}`,
-			item: Object.values(res[category])
+			item: Object.values(response[category])
 		}
 		state.rows.push(rowItem)
 		// }

@@ -11,9 +11,9 @@ export default new Router({
     linkActiveClass: 'active',
     routes: [
         { path: '*', component: Index },
-        { path: '/login', component: Login },
-        { path: '/register', component: Register },
-        { path: '/upload', component: Upload },
-        { path: '/video', component: Video },
+        { name:'login',path: '/login', component: Login },
+        {  name:'register',path: '/register', component: Register },
+        {  name:'upload',path: '/upload', component: Upload },
+        {  name:'video',path: '/video/:vid', component: Video ,props: true},
     ]
 })

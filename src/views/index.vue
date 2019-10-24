@@ -23,12 +23,16 @@ export default {
     BNavSide
   },
   mounted() {
-    let dataObj
     this.$store.dispatch({
-          type: "createIpfs",
-          data: dataObj
+          type: "CreateSwarmClient",
+          config:{
+            bzzUrl: "https://swarm-gateways.net",
+            debug:true
+          }
         }).then(() => {
-      this.$store.dispatch("getContentRows");
+      this.$store.dispatch("getContentRows").then(()=>{
+        
+      })
     });
   },
   data() {

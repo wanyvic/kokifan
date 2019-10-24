@@ -1,59 +1,55 @@
-{
-    "bangumi": {
-        "0": {
+[
+    {
+        "aid": 1,
+        "videos": 51, //数量
+        "tid": 32,
+        "tname": "完结动画",
+        "category": "bangumi",
+        "copyright": 2,
+        "pic": "http://i0.hdslb.com/bfs/archive/a3c28897f16b8922b936eb38fbd373dd18ed52b2.jpg", //http:... //bzz://
+        "title": "【合集】游戏王 怪兽之决斗 1-51",
+        "pubdate": 1533902985, //上传时间 (修改)
+        "ctime": 1533902279, //创建时间
+        "desc": "武藤游戏是童实野高中的一名普通学生，除了喜欢玩各种游戏外没有任何优点，运动神经也不好，除了青梅竹马的真崎杏子外没有任何朋友。经常自己一个人玩的游戏其实心里很想要有朋友。",
+        "state": 0,
+        "attribute": 93696,
+        "duration": 67519, //时长
+        "redirect_url": "bzz://cb52dd2cc60be214b3f05d91a6323346a4211290967d874515e7c1074a1fbcb9/master.m3u8", //http:... //bzz://
+        "rights": {
+            "bp": 1,
+            "elec": 0,
+            "download": 0,
+            "movie": 0,
+            "pay": 0,
+            "hd5": 0,
+            "no_reprint": 0,
+            "autoplay": 0,
+            "ugc_pay": 0,
+            "is_cooperation": 0,
+            "ugc_pay_preview": 0
+        },
+        "owner": {
+            "mid": 1, //uid
+            "name": "wanyvic",
+            "face": "http://i2.hdslb.com/bfs/face/60a9153609998b04301dc5b8ed44c41b537a2268.jpg"
+        },
+        "stat": {
             "aid": 29024055,
-            "videos": 51,
-            "tid": 32,
-            "tname": "完结动画",
-            "copyright": 2,
-            "pic": "http://i0.hdslb.com/bfs/archive/a3c28897f16b8922b936eb38fbd373dd18ed52b2.jpg",
-            "title": "【合集】游戏王 怪兽之决斗 1-51",
-            "pubdate": 1533902985,
-            "ctime": 1533902279,
-            "desc": "武藤游戏是童实野高中的一名普通学生，除了喜欢玩各种游戏外没有任何优点，运动神经也不好，除了青梅竹马的真崎杏子外没有任何朋友。经常自己一个人玩的游戏其实心里很想要有朋友。",
-            "state": 0,
-            "attribute": 93696,
-            "duration": 67519,
-            "redirect_url": "http://www.bilibili.com/bangumi/play/ep79463/",
-            "rights": {
-                "bp": 1,
-                "elec": 0,
-                "download": 0,
-                "movie": 0,
-                "pay": 0,
-                "hd5": 0,
-                "no_reprint": 0,
-                "autoplay": 0,
-                "ugc_pay": 0,
-                "is_cooperation": 0,
-                "ugc_pay_preview": 0
-            },
-            "owner": {
-                "mid": 928123,
-                "name": "哔哩哔哩番剧",
-                "face": "http://i2.hdslb.com/bfs/face/60a9153609998b04301dc5b8ed44c41b537a2268.jpg"
-            },
-            "stat": {
-                "aid": 29024055,
-                "view": 3369412,
-                "danmaku": 75941,
-                "reply": 5693,
-                "favorite": 1269,
-                "coin": 7777,
-                "share": 2802,
-                "now_rank": 0,
-                "his_rank": 0,
-                "like": 1627,
-                "dislike": 0
-            },
-            "dynamic": "",
-            "cid": 50349307,
-            "dimension": {
-                "width": 0,
-                "height": 0,
-                "rotate": 0
-            },
-            "bvid": "BV1Ms411u7Z9"
+            "danmaku": 75941,
+            "reply": 5693,
+            "favorite": 1269,
+            "coin": 7777,
+            "now_rank": 0,
+            "his_rank": 0,
+            "like": 1627,
+            "dislike": 0
+        },
+        "dynamic": "",
+        "cid": 50349307,
+        "dimension": {
+            "width": 0,
+            "height": 0,
+            "rotate": 0
         }
     }
-}
+]

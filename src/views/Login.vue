@@ -15,22 +15,18 @@ export default {
   },
   methods: {
     login() {
+      console.log("login");
       this.$store
         .dispatch({
-          type: "createIpfs",
-          PrivKey: this.PrivKey
+          type: "createWeb3"
         })
-        .then(
-          node => {
-            node.id().then(
-              identity => {
-                this.$router.push({ path: "/upload" });
-              },
-              err => console.error(err)
-            );
-          },
-          err => console.error(err)
-        );
+        .then(web3 => {
+          console.log(web3);
+          this.$store.dispatch({
+            type: "download",
+            bzzid:'da30bb001cc3a8f6537e81e92af3ccd67bbf3c0f51c8e256b75ba0c58ac21c61'
+          });
+        });
     }
   }
 };
