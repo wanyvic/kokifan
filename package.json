@@ -15,7 +15,7 @@
     "element-ui": "^2.12.0",
     "hls.js": "^0.12.4",
     "hlsjs-ipfs-loader": "^0.2.2",
-    "hlsjs-swarm-loader": "^0.2.3",
+    "hlsjs-swarm-loader": "^0.2.4",
     "ipfs": "^0.38.0-pre.1",
     "ipld-dag-pb": "^0.18.1",
     "lodash": "^4.17.4",

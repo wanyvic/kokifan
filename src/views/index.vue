@@ -1,9 +1,9 @@
 <template>
   <div id="dashboard">
-    <!-- <TopContainer></TopContainer>
-    <BHeader></BHeader>-->
+    <TopContainer></TopContainer>
+    <BHeader></BHeader>
     <BContent :rows="rows"></BContent>
-    <!-- <BNavSide :options="options" v-on:change="isShowMask"></BNavSide> -->
+    <BNavSide :options="options" v-on:change="isShowMask"></BNavSide>
     <div class="wnd-mask" ref="mask" v-show="showMask"></div>
   </div>
 </template>
@@ -23,17 +23,31 @@ export default {
     BNavSide
   },
   mounted() {
-    this.$store.dispatch({
-          type: "CreateSwarmClient",
-          config:{
-            bzzUrl: "https://swarm-gateways.net",
-            debug:true
-          }
-        }).then(() => {
-      this.$store.dispatch("getContentRows").then(()=>{
-        
+    const config = {
+      bzzUrl: "http://120.78.79.157:8500",
+      debug: true,
+      maxRetry: 10,
+      retryDelay: 2000,
+      manifestLoadingMaxRetry: 40000,
+      manifestLoadingRetryDelay: 5000,
+      manifestLoadingMaxRetryTimeout: 50000,
+      levelLoadingTimeOut: 10000,
+      levelLoadingMaxRetry: 40000,
+      levelLoadingRetryDelay: 1000,
+      levelLoadingMaxRetryTimeout: 64000,
+      fragLoadingTimeOut: 20000,
+      fragLoadingMaxRetry: 40000,
+      fragLoadingRetryDelay: 1000,
+      fragLoadingMaxRetryTimeout: 64000
+    };
+    this.$store
+      .dispatch({
+        type: "CreateSwarmClient",
+        config: config
       })
-    });
+      .then(() => {
+        this.$store.dispatch("getContentRows").then(() => {});
+      });
   },
   data() {
     return {

@@ -1,8 +1,13 @@
 <template>
+
   <div class="b_video">
-    <video ref="video" controls></video>
+    <video ref="video" controls class="video-js vjs-default-skin"
+    preload="auto" width="638" height="358"
+    data-setup='{}'></video>
   </div>
 </template>
+
+<script src="https://unpkg.com/video.js/dist/video.min.js"></script>
 <script>
 import { mapGetters } from "vuex";
 export default {
@@ -51,3 +56,6 @@ export default {
   methods: {}
 };
 </script>
+<style lang="stylus"> 
+@import "https://unpkg.com/video.js/dist/video-js.min.css"
+</style>
